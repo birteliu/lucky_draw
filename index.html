@@ -44,7 +44,7 @@
         var matrix;
         var rfid;
 
-        boardReady({ device: 'jV0j' }, async function(board) {
+        boardReady({ device: 'BeAX' }, async function(board) {
             board.systemReset();
             board.samplingInterval = 20;
             matrix = getMax7219(board, 9, 8, 7);
