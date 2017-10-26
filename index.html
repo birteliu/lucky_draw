@@ -36,6 +36,9 @@
             <div id="gift5" class="gift">
                     <img src="img/gift5.png" alt="" class="img2 animated shake">
             </div>
+            <div id="no" class="gift">
+                    <img src="img/no.png" alt="" class="img2 animated shake">
+            </div>
         </div>
     </div>
     <script>
@@ -87,8 +90,27 @@
                     matrix.animateStop();
                     matrix.on("0000000000000000");
                     matrix.on("3c4295a1a195423c");
+                } else if (rfid._uid == '76EE2F03') {
+                    document.getElementById("demo-area-01-show").innerHTML = document.getElementById("gift1").innerHTML;
+                    // document.getElementById("content-change").style.borderColor = '#c35d3f';
+                    matrix.animateStop();
+                    matrix.on("0000000000000000");
+                    matrix.on("3c4295a1a195423c");
+                } else if (rfid._uid == '415E932B') {
+                    document.getElementById("demo-area-01-show").innerHTML = document.getElementById("gift1").innerHTML;
+                    // document.getElementById("content-change").style.borderColor = '#c35d3f';
+                    matrix.animateStop();
+                    matrix.on("0000000000000000");
+                    matrix.on("3c4295a1a195423c");
+                } else if (rfid._uid == '36277B03') {
+                    document.getElementById("demo-area-01-show").innerHTML = document.getElementById("gift1").innerHTML;
+                    // document.getElementById("content-change").style.borderColor = '#c35d3f';
+                    matrix.animateStop();
+                    matrix.on("0000000000000000");
+                    matrix.on("3c4295a1a195423c");
                 } else {
                     document.getElementById("demo-area-01-show").innerHTML = rfid._uid;
+                    document.getElementById("demo-area-01-show").innerHTML = document.getElementById("no").innerHTML;
                     matrix.animateStop();
                     matrix.on("0000000000000000");
                     matrix.on("8142241818244281");
