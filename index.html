@@ -42,12 +42,12 @@
         </div>
     </div>
     <script>
-    (async function() {
+    (function() {
 
         var matrix;
         var rfid;
 
-        boardReady({ device: 'BeAX' }, async function(board) {
+        boardReady({ device: 'BeAX' }, function(board) {
             board.systemReset();
             board.samplingInterval = 20;
             matrix = getMax7219(board, 9, 8, 7);
@@ -56,7 +56,7 @@
             matrix.on("0000000000000000");
             matrix.on('');
             rfid.read();
-            rfid.on("enter", async function(_uid) {
+            rfid.on("enter", function(_uid) {
                 rfid._uid = _uid;
                 if (rfid._uid == '36C8F813') {
                     // document.getElementById("demo-area-01-show").innerHTML = rfid._uid;
@@ -115,10 +115,16 @@
                     matrix.on("0000000000000000");
                     matrix.on("8142241818244281");
                 }
-                await delay(1);
-                matrix.animateStop();
-                matrix.on("0000000000000000");
-                matrix.on('');
+
+                setTimeout(function () {
+                  $('#demo-area-01-show').html('<img src="img/draw.gif" class="draw-img">');
+                }, 3000);
+
+                setTimeout(function () {
+                  matrix.animateStop();
+                  matrix.on("0000000000000000");
+                  matrix.on('');
+                }, 1000);
             });
         });
 
